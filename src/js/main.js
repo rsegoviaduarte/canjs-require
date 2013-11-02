@@ -1,10 +1,10 @@
 require.config({
 
-  baseUrl: '/canjs_example2',
+  baseUrl: '/canjs-require/src',
 
   paths: {
-    jquery: "//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min",
-    can: "libs/can"
+    jquery: '//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min',
+    can: 'libs/can'
   },
   shim: {
     can: {

@@ -1,18 +1,18 @@
-define(['jquery','can','js/controllers/gunsBoard','js/controllers/editGuns','js/models/gunsModel'],function($,can,gunsBoard,editBoard,gun){
+define(['jquery','can','js/controllers/gunsBoard','js/controllers/editGuns','js/models/gunsModel'],function($,can,GunsBoard,EditBoard,Gun){
 	var routing = can.Control({
 		init: function() {
-			var gboard = gunsBoard,
+			var gboard = GunsBoard,
 				element,
 				store;
 
 			store = can.fixture.store(10, function(i) {
-			  return {
-			    id : i,
-			    desc : 'Glock 17',
-			    year: '2002',
-			    model: '34554',
-			    status: 2
-			  }
+				return {
+					id : i,
+					desc : 'Glock 17',
+					year: '2002',
+					model: '34554',
+					status: 2
+				};
 			});
 
 			can.fixture('GET /guns', store.findAll);
@@ -27,30 +27,30 @@ define(['jquery','can','js/controllers/gunsBoard','js/controllers/editGuns','js/
 
 			can.route('guns/:id');
 
-		    element = $('#list');
-		    gboard = new gunsBoard($('#list'));
+			element = $('#list');
+			gboard = new GunsBoard(element);
 
-		    this.editor = new editBoard($('#edit'));
-		    $('#edit').hide();
+			this.editor = new EditBoard($('#edit'));
+			$('#edit').hide();
 
-		    can.route.ready(true);
-	 	},
+			can.route.ready(true);
+		},
 
-	 	'route':function(data){
-	 		$('#edit').hide();
-	 	},
+		'route': function(){
+			$('#edit').hide();
+		},
 
-	 	'guns/:id route': function(data) {
-		    if(data.id) {
-		      var editor = this.editor;
-		      gun.findOne({id: data.id},function(gun) {
-		        editor.loadGun(gun);
-		        editor.element.show();
-		      });
-		    }
-		    else {
-		      $('#edit').hide();
-		    }
+		'guns/:id route': function(data) {
+			if(data.id) {
+				var editor = this.editor;
+				Gun.findOne({id: data.id},function(gun) {
+					editor.loadGun(gun);
+					editor.element.show();
+				});
+			}
+			else {
+				$('#edit').hide();
+			}
 		}
 	});
 
