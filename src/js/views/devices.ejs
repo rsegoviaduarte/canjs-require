@@ -1,8 +1,0 @@
-<ul>
-	<% list(this.attr('guns'), function(gun){ %>
-		<li <%= (el)-> el.data('gun', gun) %>>
-			<span class="description"><%=gun.attr('desc')%></span>
-			<span class="delete">x</span>
-		</li>
-	<% }) %>
-</ul>
