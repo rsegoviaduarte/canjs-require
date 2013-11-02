@@ -9,7 +9,7 @@ The [CanJS website](http://canjs.com) is a great resource for getting started.
 
 Here is another example, which is the one that I took as guide to build mine. [TodoMVC Canjs](http://todomvc.com/architecture-examples/canjs/).
 
-## Requiere Implementation.
+## Require Implementation.
 
 CanJS is currently one of the few MVC libraries that fully supports the AMD module concept. Any part of CanJS may be loaded as its own module, which in turn only loads the dependencies actually required.
 
