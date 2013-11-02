@@ -1,0 +1,15 @@
+{
+	"guns":[{
+		"id":"1",
+		"model":"3445D",
+		"year": "2001",
+		"desc": "glock 17",
+		"status": 3
+	},{
+		"id":"2",
+		"model":"3885D",
+		"year": "2002",
+		"desc": "glock 22",
+		"status": 2
+	}]
+}
