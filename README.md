@@ -25,24 +25,41 @@ define([
 	can.view    // -> now able to render EJS views
 });
 ```
+For this example, what I did is require at the config file, this way:
+
+```javascript
+  paths: {
+    jquery: "//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min",
+    can: "libs/can"
+  },
+  shim: {
+    can: {
+        deps: [
+          'jquery'
+        ],
+        exports: 'can'
+    }
+  }
+});
+```
 
 The available modules are
 
-- `can/construct` - Inheritable constructor functions
-  - `can/construct/super` - Call super methods
-  - `can/construct/proxy` - Proxy construct methods
-- `can/observe` - Observable key-value bindings
-  - `can/observe/attributes` - Attribute conversion and model associations
-  - `can/observe/backup` - Backup and restore Observe states
-  - `can/observe/validations` - Validate observes
-- `can/control` - Declarative event bindings
-  - `can/control/plugin` - Turns Controls into jQuery plugins
-  - `can/control/route` - Declarative route bindings
-- `can/view` - Template loading, caching, rendering
-  - `can/view/ejs` - Live binding embedded JavaScript
-  - `can/view/mustache` - Live binding Mustache / Handlebars templates
-  - `can/view/modifiers` - Adds view rendering abilities to jQuery modifiers (like `.html`, `.append` etc.)
-- `can/route` - Back button and bookmarking support
+- `libs/can/construct` - Inheritable constructor functions
+  - `libs/can/construct/super` - Call super methods
+  - `libs/can/construct/proxy` - Proxy construct methods
+- `libs/can/observe` - Observable key-value bindings
+  - `libs/can/observe/attributes` - Attribute conversion and model associations
+  - `libs/can/observe/backup` - Backup and restore Observe states
+  - `libs/can/observe/validations` - Validate observes
+- `libs/can/control` - Declarative event bindings
+  - `libs/can/control/plugin` - Turns Controls into jQuery plugins
+  - `libs/can/control/route` - Declarative route bindings
+- `libs/can/view` - Template loading, caching, rendering
+  - `libs/can/view/ejs` - Live binding embedded JavaScript
+  - `libs/can/view/mustache` - Live binding Mustache / Handlebars templates
+  - `libs/can/view/modifiers` - Adds view rendering abilities to jQuery modifiers (like `.html`, `.append` etc.)
+- `libs/can/route` - Back button and bookmarking support
 
 ## Canjs features.
 
