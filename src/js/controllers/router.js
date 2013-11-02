@@ -6,6 +6,7 @@ define(['jquery','can','js/controllers/gunsBoard','js/controllers/editGuns','js/
 				store;
 
 			store = can.fixture.store(10, function(i) {
+				i += 1;
 				return {
 					id : i,
 					desc : 'Glock 17',

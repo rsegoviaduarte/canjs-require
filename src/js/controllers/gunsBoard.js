@@ -10,7 +10,7 @@ define(['jquery','can','js/models/gunsModel'],function($,can,gunsModel){
 
 			gunsModel.findAll({}, function(response){
 				gunsOberver.attr('guns',response);
-				el.html(can.view('js/views/devices.ejs',gunsOberver));
+				el.html(can.view('js/views/list.ejs',gunsOberver));
 			});
 
 			can.bind.call(this, 'refresh', function(ev,id){
