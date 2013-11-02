@@ -40,7 +40,6 @@ For this example, what I did is require at the config file, this way:
         exports: 'can'
     }
   }
-});
 ```
 
 The available modules are
